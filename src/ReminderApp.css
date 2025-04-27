@@ -1,0 +1,163 @@
+/* ReminderApp.css */
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); /* Deep ocean gradient */
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .reminder-container {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(20px);
+    padding: 40px 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.3);
+    border: 1.5px solid rgba(255, 255, 255, 0.2);
+    width: 90%;
+    max-width: 500px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .reminder-container::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    z-index: -1;
+    background: linear-gradient(135deg, #ff6a00, #ee0979, #0fd850, #00c9ff);
+    background-size: 400% 400%;
+    animation: borderGlow 10s ease infinite;
+    border-radius: 22px;
+  }
+  
+  @keyframes borderGlow {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  
+  .reminder-container h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #fff;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+  
+  input[type="text"],
+  input[type="date"] {
+    padding: 10px 14px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s;
+  }
+  
+  input[type="text"]:focus,
+  input[type="date"]:focus {
+    border-color: #667eea;
+  }
+  
+  button {
+    padding: 10px 16px;
+    border: none;
+    background: #2c3358;
+    color: white;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  button:hover {
+    background: #5a67d8;
+  }
+  
+  .filter-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  li {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    padding: 12px 18px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+  }
+  
+  li span {
+    font-weight: 500;
+  }
+  
+  li button {
+    background: #adf0ed;
+    padding: 6px 10px;
+    font-size: 0.9rem;
+    border-radius: 6px;
+    transition: background 0.3s;
+  }
+  
+  li button:hover {
+    background: #023c3b;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 500px) {
+    .reminder-container {
+      padding: 25px 20px;
+    }
+  
+    form {
+      gap: 10px;
+    }
+  
+    button {
+      font-size: 0.95rem;
+    }
+  
+    li {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 8px;
+    }
+  
+    li button {
+      align-self: flex-end;
+    }
+  }
+  
